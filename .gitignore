@@ -1,0 +1,2 @@
+.env
+./app/patients/node_modules/**

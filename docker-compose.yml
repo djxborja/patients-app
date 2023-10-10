@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  frontend: 
+    build:
+      context: .
+    ports:
+      - 4200:4200
+    command: tail -f /dev/null
+    volumes:
+      - patients_app_volume:/app
+volumes:
+  patients_app_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUME_PATH}
+      o: bind

@@ -12,4 +12,3 @@ Se han creado los archivos necesarios en la raiz del proyecto. Siguiendo las bue
 Se ha de crear un archivo .env en el mismo directorio que el archivo docker-compose con la ruta donde el usuario especifica la ruta en la cuál tendrá acceso al proyecto en su equipo:
 
 <code>VOLUME_PATH=ruta_proyecto</code>
-

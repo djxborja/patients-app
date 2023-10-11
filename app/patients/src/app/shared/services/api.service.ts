@@ -16,4 +16,8 @@ export class ApiService {
     getPatientsList$(): Observable<FhirResponse<PatientFhir>> {
         return this.http.get<FhirResponse<PatientFhir>>(`${this.apiUrl}${GLOBAL.API.resources.patients}`)
     }
+
+    getPatient$(id:string): Observable<PatientFhir> {
+        return this.http.get<PatientFhir>(`${this.apiUrl}${GLOBAL.API.resources.patients}/${id}`)
+    }
 }

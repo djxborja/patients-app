@@ -13,3 +13,15 @@ export const adaptApiPatientsToPatients = (fhirObject: FhirResponse<PatientFhir>
             family: res.resource.name[0].family
     }))
 }
+
+export const adaptApiPatientToPatient = (fhirObject: PatientFhir): Patient => {
+    let patient: Patient;
+    return patient = {
+            active: (fhirObject.active || fhirObject.active === undefined) ? true : false,
+            birthDate: fhirObject.birthDate,
+            gender: fhirObject.gender,
+            id: fhirObject.id,
+            name: fhirObject.name[0].given[0],
+            family: fhirObject.name[0].family
+    }
+}

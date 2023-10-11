@@ -1,0 +1,36 @@
+<div class="container" *ngIf="patient">
+    <p-card header={{patient.name}} subheader="{{patient.family}}" [style]="{ width: '660px' }" layout="right">
+        <div class="prebody-card-content">
+            <span *ngIf="patient.active">
+                <p-tag severity="success" value="Activo"></p-tag>
+            </span>
+            <span *ngIf="!patient.active">
+                <p-tag severity="danger" value="Inactivo"></p-tag>
+            </span>
+        </div>
+        <ng-template pTemplate="content">
+            <div class="body-card-container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Fecha de nacimiento</h4>
+                        <div *ngIf="patient.birthDate">
+                            <p>{{patient.birthDate | date:'dd/MM/yyyy'}}</p>
+                        </div>
+                        <div *ngIf="!patient.birthDate">
+                            <p>No especificada</p>
+                        </div>
+                        <h4>Género</h4>
+                        <p>{{patient.gender || 'No especificado' | titlecase}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Identificador</h4>
+                        <p>{{patient.id }}</p>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button label="Volver" icon="pi pi-arrow-left" (onClick)="returnToPatientsList()"></p-button>
+        </ng-template>
+    </p-card>
+</div>

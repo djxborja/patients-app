@@ -6,17 +6,24 @@ import { PatientListComponent } from './components/patient-list/patient-list.com
 
 import { TableModule } from 'primeng/table';
 import { SkeletonModule } from 'primeng/skeleton';
-
+import { PatientInfoComponent } from './components/patient-info/patient-info.component';
+import { CardModule, } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
   declarations: [
-    PatientListComponent
+    PatientListComponent,
+    PatientInfoComponent
   ],
   imports: [
     CommonModule,
     PatientRoutingModule,
     TableModule,
-    SkeletonModule
+    SkeletonModule,
+    CardModule,
+    ButtonModule,
+    TagModule
   ]
 })
 export class PatientModule { }
